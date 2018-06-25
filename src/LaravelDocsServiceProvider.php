@@ -25,7 +25,7 @@ class LaravelDocsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/laraveldocs.php', 'LRDocs'
+            __DIR__.'/config/laraveldocs.php', 'laraveldocs'
         );
     }
 }
