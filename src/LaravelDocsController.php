@@ -5,7 +5,7 @@ namespace ChungNT\LaravelDocs;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use GrahamCampbell\Markdown\Facades\Markdown;
-use Illuminate\Support\Facades\File;
+use File;
 use SEO;
 
 class LaravelDocsController extends Controller
@@ -58,5 +58,20 @@ class LaravelDocsController extends Controller
         } catch (\Exception $e) {
             abort(404);
         }
+    }
+
+    public function sitemap()
+    {
+        $sitemap = app()->make('sitemap');
+        $sitemap->setCache('chungnguyenblog.sitemap.laraveldocs', 15);
+        if (!$sitemap->isCached()) {
+            $files = File::files(__DIR__ . '/views/md');
+            $sitemap->add(url('laravel/docs'), Carbon::now(), 0.6, 'daily');
+            foreach ($files as $file) {
+                $sitemap->add(url('laravel/docs/', $file->getRelativePathname()), Carbon::now(), 0.6, 'daily');
+            }
+        }
+        // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
+        return $sitemap->render('xml');
     }
 }

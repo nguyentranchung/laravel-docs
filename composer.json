@@ -13,7 +13,8 @@
     "php": ">=7.0",
     "illuminate/config": "5.*",
     "illuminate/support": "5.*",
-    "graham-campbell/markdown": "master"
+    "graham-campbell/markdown": "master",
+    "roumen/sitemap": "*"
   },
   "autoload": {
     "psr-4": {
