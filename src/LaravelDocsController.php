@@ -68,7 +68,7 @@ class LaravelDocsController extends Controller
             $files = File::files(__DIR__ . '/views/md');
             $sitemap->add(url('laravel/docs'), Carbon::now(), 0.6, 'daily');
             foreach ($files as $file) {
-                $sitemap->add(url('laravel/docs/', $file->getRelativePathname()), Carbon::now(), 0.6, 'daily');
+                $sitemap->add(url('laravel/docs', $file->getRelativePathname()), Carbon::now(), 0.6, 'daily');
             }
         }
         // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
