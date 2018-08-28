@@ -16,12 +16,12 @@
 <a name="introduction"></a>
 ## Giới thiệu
 
-Ngoài việc cung cấp các service [authenticatioin](/laravel/docs//docs/{versioin}/authentication), Laravel cũng cung cấp một cách đơn giản để tổ chức các logic cấp quyền và điều khiển việc truy cập vào tài nguyên. Có nhiều methods và helpers hỗ trợ bạn trong việc tổ chức việc cấp quyền của bạn và chúng ta sẽ đi qua từng phần của chúng trong tài liệu này.
+Ngoài việc cung cấp các service [authenticatioin](https://laravel.com/docs/master/authentication), Laravel cũng cung cấp một cách đơn giản để tổ chức các logic cấp quyền và điều khiển việc truy cập vào tài nguyên. Có nhiều methods và helpers hỗ trợ bạn trong việc tổ chức việc cấp quyền của bạn và chúng ta sẽ đi qua từng phần của chúng trong tài liệu này.
 
 <a name="defining-abilities"></a>
 ## Định nghĩa các Abilities
 
-Cách đơn giản nhất để xác định nếu một user có thể thực hiện một hành động đã cho là định nghĩa ra một "ability" bằng cách sử dụng class `Illuminate\Auth\Access\Gate`. `AuthServiceProvider` cái mà cùng với Laravel phục vụ như một nơi để định nghĩa tất cả các abilities cho ứng dụng của bạn. Ví dụ, hãy định nghĩa một `update-post` ability nhận `User` hiện tại và một `Post` [model](/laravel/docs//docs/{versioni}/eloquent). Với ability này, chúng ta sẽ xác định nếu `id` của user trùng với `user_id` của post.
+Cách đơn giản nhất để xác định nếu một user có thể thực hiện một hành động đã cho là định nghĩa ra một "ability" bằng cách sử dụng class `Illuminate\Auth\Access\Gate`. `AuthServiceProvider` cái mà cùng với Laravel phục vụ như một nơi để định nghĩa tất cả các abilities cho ứng dụng của bạn. Ví dụ, hãy định nghĩa một `update-post` ability nhận `User` hiện tại và một `Post` [model](https://laravel.com/docs/master/eloquent). Với ability này, chúng ta sẽ xác định nếu `id` của user trùng với `user_id` của post.
 
     <?php
 

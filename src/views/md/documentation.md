@@ -2,7 +2,7 @@
     - [Release Notes](https://laravel.com/docs/master/releases)
     - [Hướng dẫn upgrade](https://laravel.com/docs/master/upgrade)
     - [Hướng dẫn đóng góp](https://laravel.com/docs/master/contributions)
-    - [API Documentation](https://laravel.com/docs/master//api/{{version}})
+    - [API Documentation](https://laravel.com/api/master)
 - Thiết lập
     - [Cài đặt](https://laravel.com/docs/master/installation)
     - [Cấu hình](https://laravel.com/docs/master/configuration)
